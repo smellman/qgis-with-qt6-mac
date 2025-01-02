@@ -1,0 +1,1 @@
+# qgis-with-qt6-mac
