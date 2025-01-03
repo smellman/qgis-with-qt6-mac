@@ -3,3 +3,6 @@
 *.mobi
 _book
 node_modules
+*.tar.*
+*.zip
+qt-everywhere-*
