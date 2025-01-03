@@ -1,0 +1,135 @@
+# TODO
+
+## Qt6
+
+- [ ] build Qt6 from source
+
+## Core libraries
+
+List up from [smellman's QGIS-Mac-Packager dev-deps-0.10.0 branch](https://github.com/smellman/QGIS-Mac-Packager/tree/dev-deps-0.10.0/qgis_deps/recipes).
+
+- [ ] abseil_cpp
+- [ ] apache_arrow
+- [ ] aws_sdk_cpp
+- [ ] bison
+- [ ] boost
+- [ ] brotli
+- [ ] bz2
+- [ ] c_ares
+- [ ] ca_certificates
+- [ ] exiv2
+- [ ] expat
+- [ ] fastcgi
+- [ ] flex
+- [ ] fontconfig
+- [ ] freetds
+- [ ] freetype
+- [ ] freexl
+- [ ] gcc
+- [ ] gdal
+- [ ] geos
+- [ ] gettext
+- [ ] gflags
+- [ ] glog
+- [ ] gmp
+- [ ] grass
+- [ ] grpc
+- [ ] gsl
+- [ ] hdf5
+- [ ] jpeg
+- [ ] laszip
+- [ ] lerc
+- [ ] libcurl
+- [ ] libffi
+- [ ] libgeotiff
+- [ ] libicu
+- [ ] libjsonc
+- [ ] libkml
+- [ ] libmpc
+- [ ] libomp
+- [ ] libssh2
+- [ ] libtasn1
+- [ ] libtiff
+- [ ] libtool
+- [ ] libunistring
+- [ ] libxml2
+- [ ] libxslt
+- [ ] libyaml
+- [ ] libzip
+- [ ] little_cms2
+- [ ] lz4
+- [ ] minizip
+- [ ] mpfr
+- [ ] mysql
+- [ ] netcdf
+- [ ] openblas
+- [ ] openjpeg
+- [ ] openssl
+- [ ] pcre
+- [ ] pdal
+- [ ] pkg_config
+- [ ] png
+- [ ] poppler
+- [ ] postgres
+- [ ] proj
+- [ ] proj_data
+- [ ] protobuf
+- [ ] python
+- [ ] python_all
+- [ ] python_cftime
+- [ ] python_flona
+- [ ] python_gdal
+- [ ] python_geopandas
+- [ ] python_h5py
+- [ ] python_llvmlite
+- [ ] python_matplotlib
+- [ ] python_netcdf4
+- [ ] python_numba
+- [ ] python_numpy
+- [ ] python_opencv
+- [ ] python_owslib
+- [ ] python_packages
+- [ ] python_pandas
+- [ ] python_patsy
+- [ ] python_pillow
+- [ ] python_psycopg2
+- [ ] python_pymssql
+- [ ] python_pyproj
+- [ ] python_pyqt6
+- [ ] python_pyqt_builder
+- [ ] pythop_pysal
+- [ ] python_qscintilla
+- [ ] python_rasterio
+- [ ] python_rtree
+- [ ] python_scikit_learn
+- [ ] python_scipy
+- [ ] python_shapely
+- [ ] python_sip
+- [ ] python_statsmodels
+- [ ] qca
+- [ ] qtextra
+- [ ] qtkeychain
+- [ ] qtwebkit
+- [ ] qwt
+- [ ] rapidjson
+- [ ] re2
+- [ ] rttopo
+- [ ] saga
+- [ ] snappy
+- [ ] spatialindex
+- [ ] spatialite
+- [ ] sqlite
+- [ ] thrift
+- [ ] unixodbc
+- [ ] uriparser
+- [ ] utf8proc
+- [ ] webp
+- [ ] wxmac
+- [ ] xerces
+- [ ] xz
+- [ ] zlib
+- [ ] zstd
+
+## QGIS
+
+- [ ] build QGIS from source
