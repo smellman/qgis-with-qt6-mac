@@ -1,0 +1,62 @@
+name: Publish
+
+# Publish npm and dockerhub when Release Pull Request is merged
+#
+# https://hub.docker.com/r/honkit/honkit
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: '**/*.md'
+  build:
+    needs: lint
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 22
+      - name: Restore npm cache
+        id: restore-cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: js-depend-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+      - name: npm install
+        if: steps.restore-cache.outputs.cache-hit != 'true'
+        run: npm install
+      - name: build docs
+        run: npx honkit build
+      - run: touch _book/.nojekyll
+      - name: Deploy
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _book
+  deploy:
+    runs-on: ubuntu-24.04
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

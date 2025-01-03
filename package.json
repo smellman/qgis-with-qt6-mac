@@ -1,0 +1,25 @@
+{
+  "name": "qgis-with-qt6-mac",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "honkit build",
+    "serve": "honkit serve",
+    "lint": "markdownlint-cli2 --config .markdownlint-cli2.jsonc '**/*.md' '#node_modules' '#_book' '#.git'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smellman/qgis-with-qt6-mac.git"
+  },
+  "author": "Taro Matsuzawa",
+  "license": "GPL-2.0-only",
+  "bugs": {
+    "url": "https://github.com/smellman/qgis-with-qt6-mac/issues"
+  },
+  "homepage": "https://github.com/smellman/qgis-with-qt6-mac#readme",
+  "devDependencies": {
+    "honkit": "^6.0.2",
+    "markdownlint-cli2": "^0.17.1"
+  }
+}
