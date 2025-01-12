@@ -11,15 +11,15 @@ LINK_libpdal_util=libpdal_util.13.dylib
 
 # dependencies of this recipe
 DEPS_pdal=(
-  gdal
-  libgeotiff
-  laszip
-  libxml2
-  zstd
-  xz
-  hdf5
-  zlib
-  libcurl
+    gdal
+    libgeotiff
+    laszip
+    libxml2
+    zstd
+    xz
+    hdf5
+    zlib
+    libcurl
 )
 
 # url of the package
