@@ -32,8 +32,8 @@ DEPS_gdal=(
     poppler
     postgres
     proj
-    spatialite
     sqlite
+    spatialite
     unixodbc
     xerces
     xz
