@@ -113,6 +113,7 @@ REQUIREMENTS_python_packages=(
     pyvenv==0.2.2
     snuggs==1.4.7
     affine==2.4.0
+    matplotlib==3.10.0
 )
 
 # pyodbc build may fail
