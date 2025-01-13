@@ -30,7 +30,7 @@ DEPS_qgis_deps=(
     qscintilla
     qtextra
     qtkeychain
-    qtwebkit
+    # qtwebkit # remove qtwebkit from qgis_deps because it is only supports qt5
     qwt
     saga
     spatialindex
