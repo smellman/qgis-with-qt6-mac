@@ -10,7 +10,7 @@ LINK_spatialite=libspatialite.8.dylib
 DEPS_spatialite=(proj geos freexl libxml2 rttopo minizip)
 
 # url of the package
-URL_spatialite=https://www.gaia-gis.it/gaia-sins/libspatialite-${VERSION_spatialite}.tar.gz
+URL_spatialite=http://www.gaia-gis.it/gaia-sins/libspatialite-sources/libspatialite-${VERSION_spatialite}.tar.gz
 
 # md5 of the package
 MD5_spatialite=2db597114bd6ee20db93de3984fd116c
