@@ -10,7 +10,7 @@ LINK_gmp=libgmpxx.4.dylib
 DEPS_gmp=()
 
 # url of the package
-URL_gmp=https://gmplib.org/download/gmp/gmp-$VERSION_gmp.tar.lz
+URL_gmp=https://gmplib.org/download/gmp/gmp-${VERSION_gmp}.tar.xz
 
 # md5 of the package
 MD5_gmp=956dc04e864001a9c22429f761f2c283
