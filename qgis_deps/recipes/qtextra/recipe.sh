@@ -13,7 +13,7 @@ LINK_libqsqlpsql=libqsqlpsql.dylib
 DEPS_qtextra=(sqlite unixodbc postgres)
 
 # url of the package
-URL_qtextra=https://github.com/qt/qtbase/archive/refs/tags/v{VERSION_qtextra}.tar.gz
+URL_qtextra=https://github.com/qt/qtbase/archive/refs/tags/v${VERSION_qtextra}.tar.gz
 
 # md5 of the package
 MD5_qtextra=3c3faccf4afb7ea7cf167f9e8e2bb9b6
