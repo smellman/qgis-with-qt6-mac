@@ -9,7 +9,7 @@ VERSION_python_numpy=2.2.1
 DEPS_python_numpy=(python python_packages openblas)
 
 # url of the package
-URL_python_numpy=https://github.com/numpy/numpy/archive/v${VERSION_python_numpy}.tar.gz
+URL_python_numpy=https://github.com/numpy/numpy/releases/download/v${VERSION_python_numpy}/numpy-${VERSION_python_numpy}.tar.gz
 
 # md5 of the package
 MD5_python_numpy=57c5757508a50d1daefa4b689e9701cb
