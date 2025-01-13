@@ -26,7 +26,7 @@ DEPS_pdal=(
 URL_pdal=https://github.com/PDAL/PDAL/releases/download/${VERSION_pdal}/PDAL-${VERSION_pdal}-src.tar.bz2
 
 # md5 of the package
-MD5_pdal=0fb3aae741d4d27f34521a45f7c55077
+MD5_pdal=4b8a1a24d1900d95134c0eaabd3c6b25
 
 # default build path
 BUILD_pdal=$BUILD_PATH/pdal/$(get_directory $URL_pdal)
