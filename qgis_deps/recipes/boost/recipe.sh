@@ -10,7 +10,7 @@ VERSION_boost=1.87.0
 DEPS_boost=(zlib xz python python_numpy libicu)
 
 # url of the package
-URL_boost=https://archives.boost.io/release/${VERSION_boost}/source/boost_${VERSION_boost}.tar.bz2
+URL_boost=https://archives.boost.io/release/${VERSION_boost}/source/boost_${VERSION_boost//./_}.tar.bz2
 
 # md5 of the package
 MD5_boost=ccdfe37d3bad682d841782f760faf141
