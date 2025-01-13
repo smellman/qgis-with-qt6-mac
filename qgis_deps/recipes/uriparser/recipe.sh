@@ -11,7 +11,7 @@ LINK_liburiparser=liburiparser.1.dylib
 DEPS_uriparser=()
 
 # url of the package
-URL_uriparser=https://github.com/uriparser/uriparser/archive/uriparser-$VERSION_uriparser.tar.gz
+URL_uriparser=https://github.com/uriparser/uriparser/releases/download/uriparser-${VERSION_uriparser}/uriparser-${VERSION_uriparser}.tar.gz
 
 # md5 of the package
 MD5_uriparser=a8f3c2cf5dc5f333cdea537b2d31b796
