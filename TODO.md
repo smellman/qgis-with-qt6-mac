@@ -2,13 +2,13 @@
 
 ## Qt6
 
-- [ ] build Qt6 from source
+- [x] build Qt6 from source
 
 ## Core libraries
 
 List up from [smellman's QGIS-Mac-Packager dev-deps-0.10.0 branch](https://github.com/smellman/QGIS-Mac-Packager/tree/dev-deps-0.10.0/qgis_deps/recipes).
 
-- [ ] abseil_cpp
+- [x] abseil_cpp
 - [ ] apache_arrow
 - [ ] aws_sdk_cpp
 - [ ] bison

@@ -25,3 +25,7 @@ So, I try to build QGIS with Qt6 on macOS.
 - CMake
 - Ninja
 - wget
+
+## Original repository
+
+[QGIS-Mac-Packager](https://github.com/qgis/QGIS-Mac-Packager) by QGIS.org.
