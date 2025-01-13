@@ -11,7 +11,7 @@ LINK_liblzma=liblzma.5.dylib
 DEPS_xz=(gettext)
 
 # url of the package
-URL_xz=https://github.com/tukaani-project/xz/releases/download/v${VERISON_xz}/xz-${VERISON_xz}.tar.gz
+URL_xz=https://github.com/tukaani-project/xz/releases/download/v${VERSION_xz}/xz-${VERSION_xz}.tar.gz
 
 # md5 of the package
 MD5_xz=e7f2caec3e4951673942f45cbf706797
