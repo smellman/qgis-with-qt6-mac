@@ -10,7 +10,7 @@ LINK_aws_c_common=libaws-c-common.dylib
 DEPS_aws_c_common=()
 
 # url of the package
-URL_aws_c_common=https://github.com/awslabs/aws-c-common/archive/refs/tags/v{VERSION_aws_c_common}.tar.gz
+URL_aws_c_common=https://github.com/awslabs/aws-c-common/archive/refs/tags/v${VERSION_aws_c_common}.tar.gz
 
 # md5 of the package
 MD5_aws_c_common=d2b3eac87133329be81538049b6129e9

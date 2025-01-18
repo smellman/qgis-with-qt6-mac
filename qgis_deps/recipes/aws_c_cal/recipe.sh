@@ -12,7 +12,7 @@ DEPS_aws_c_cal=(
 )
 
 # url of the package
-URL_aws_c_cal=https://github.com/awslabs/aws-c-cal/archive/refs/tags/v{VERSION_aws_c_cal}.tar.gz
+URL_aws_c_cal=https://github.com/awslabs/aws-c-cal/archive/refs/tags/v${VERSION_aws_c_cal}.tar.gz
 
 # md5 of the package
 MD5_aws_c_cal=ed8340d00a6b0e660e3fb244b0b0e3c4

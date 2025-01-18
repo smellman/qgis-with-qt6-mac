@@ -15,7 +15,7 @@ DEPS_aws_c_http=(
 )
 
 # url of the package
-URL_aws_c_http=https://github.com/awslabs/aws-c-http/archive/refs/tags/v{VERSION_aws_c_http}.tar.gz
+URL_aws_c_http=https://github.com/awslabs/aws-c-http/archive/refs/tags/v${VERSION_aws_c_http}.tar.gz
 
 # md5 of the package
 MD5_aws_c_http=5aadae8619a5b09739b99d886075879d
