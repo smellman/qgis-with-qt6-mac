@@ -7,7 +7,15 @@ VERSION_aws_sdk_cpp=1.11.483
 LINK_aws_sdk_cpp=libaws-cpp-sdk-ec2.dylib
 
 # dependencies of this recipe
-DEPS_aws_sdk_cpp=()
+DEPS_aws_sdk_cpp=(
+    aws_c_auth
+    aws_c_common
+    aws_c_event_stream
+    aws_c_http
+    aws_c_io
+    aws_c_s3
+    aws_crt_cpp
+)
 
 # url of the package
 URL_aws_sdk_cpp=https://github.com/aws/aws-sdk-cpp/archive/refs/tags/${VERSION_aws_sdk_cpp}.tar.gz
@@ -31,8 +39,8 @@ function prebuild_aws_sdk_cpp() {
         return
     fi
 
-    # need to clone recursively
-    git clone --recursive https://github.com/aws/aws-sdk-cpp.git -b ${VERSION_aws_sdk_cpp} --depth 1
+    # # need to clone recursively
+    # git clone --recursive https://github.com/aws/aws-sdk-cpp.git -b ${VERSION_aws_sdk_cpp} --depth 1
 
     touch .patched
 }
@@ -58,11 +66,11 @@ function build_aws_sdk_cpp() {
     try $NINJA
     try $NINJA install
 
-    # fixes all libraries install name
-    for i in `ls ${STAGE_PATH}/lib/libaws*.dylib`;
-    do
-        fix_install_name lib/`basename $i`
-    done
+    # # fixes all libraries install name
+    # for i in `ls ${STAGE_PATH}/lib/libaws*.dylib`;
+    # do
+    #     fix_install_name lib/`basename $i`
+    # done
 
     pop_env
 }
