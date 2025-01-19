@@ -16,6 +16,7 @@ function pop_env() {
     export MAKE=$OLD_MAKE
     export LD=$OLD_LD
     export CMAKE=$OLD_CMAKE
+    export MESON=$OLD_MESON
     export CONFIGURE=$OLD_CONFIGURE
     export INCLUDE=$OLD_INCLUDE
     export LIB_DIR=$OLD_LIB_DIR
@@ -204,6 +205,7 @@ function push_env() {
     export OLD_MAKE=$MAKE
     export OLD_LD=$LD
     export OLD_CMAKE=$CMAKE
+    export OLD_MESON=$MESON
     export OLD_CONFIGURE=$CONFIGURE
     export OLD_INCLUDE=$INCLUDE
     export OLD_LIB_DIR=$LIB_DIR
@@ -236,6 +238,7 @@ function push_env() {
     add_homebrew_path git
     add_homebrew_path wget
     add_homebrew_path texinfo
+    add_homebrew_path meson
 
     ###################
     # Configure/Make system
@@ -275,10 +278,18 @@ function push_env() {
     export CMAKE="${CMAKE} -DCMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH=FALSE"
     export CMAKE="${CMAKE} -DCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH=FALSE"
     export CMAKE="${CMAKE} -DCMAKE_MACOSX_RPATH=OFF"
-    export CMAKE="${CMAKE} -DENABLE_TESTS=OFF"
+    export CMAKE="${CMAKE} -DBUILD_TESTING=OFF"
     export CMAKE="${CMAKE} -GNinja -DCMAKE_MAKE_PROGRAM=$NINJA"
     export CMAKE="${CMAKE} -DCMAKE_OSX_ARCHITECTURES=$ARCH"
     # MACOSX_DEPLOYMENT_TARGET in environment should set minimum version
+
+    ###################
+    # Meson
+    export MESON="meson setup build"
+    export MESON="${MESON} --prefix=$STAGE_PATH"
+    export MESON="${MESON} --libdir=$STAGE_PATH/lib"
+    export MESON="${MESON} --buildtype=release"
+    export MESON="${MESON} --wrap-mode=nofallback"
 
     ###################
     # QMAKE

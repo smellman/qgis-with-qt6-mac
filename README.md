@@ -25,6 +25,7 @@ So, I try to build QGIS with Qt6 on macOS.
 - CMake
 - Ninja
 - wget
+- Meson
 
 ## Original repository
 

@@ -43,18 +43,15 @@ function shouldbuild_inih() {
 
 # function called to build the source code
 function build_inih() {
-    try mkdir -p $BUILD_PATH/inih/build-$ARCH
+    try rsync -a $BUILD_inih/ $BUILD_PATH/inih/build-$ARCH/
     try cd $BUILD_PATH/inih/build-$ARCH
 
     push_env
 
-    try $CMAKE \
-        $BUILD_inih
+    try $MESON -Dcpp_std=c++11
 
-    check_file_configuration CMakeCache.txt
-
-    try $NINJA
-    try $NINJA install
+    try meson compile -C build --verbose
+    try meson install -C build
 
     pop_env
 }
