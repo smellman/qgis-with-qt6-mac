@@ -64,7 +64,7 @@ function build_openssl() {
     try perl ./Configure \
         --prefix=$STAGE_PATH \
         --openssldir=$STAGE_PATH \
-        darwin64-x86_64-cc enable-ec_nistp_64_gcc_128 \
+        darwin64-arm64-cc enable-ec_nistp_64_gcc_128 \
         no-ssl3 \
         no-ssl3-method \
         no-zlib \
