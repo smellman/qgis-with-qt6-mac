@@ -7,7 +7,7 @@ VERSION_freexl=2.0.0
 LINK_freexl=libfreexl.1.dylib
 
 # dependencies of this recipe
-DEPS_freexl=()
+DEPS_freexl=(minizip)
 
 # url of the package
 URL_freexl=https://www.gaia-gis.it/gaia-sins/freexl-sources/freexl-${VERSION_freexl}.tar.gz
