@@ -8,7 +8,7 @@ VERSION_postgres=17.2
 LINK_libpq=libpq.5.dylib
 
 # dependencies of this recipe
-DEPS_postgres=(openssl)
+DEPS_postgres=(openssl libicu)
 
 # url of the package
 URL_postgres=https://ftp.postgresql.org/pub/source/v${VERSION_postgres}/postgresql-${VERSION_postgres}.tar.bz2
