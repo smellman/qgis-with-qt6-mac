@@ -57,7 +57,7 @@ function build_aws_sdk_cpp() {
 
     try ${CMAKE} \
         -DENABLE_TESTING=OFF \
-        $BUILD_aws_sdk_cpp/aws-sdk-cpp
+        $BUILD_aws_sdk_cpp
     check_file_configuration CMakeCache.txt
 
     try $NINJA

@@ -277,6 +277,7 @@ function push_env() {
     export CMAKE="${CMAKE} -DCMAKE_MACOSX_RPATH=OFF"
     export CMAKE="${CMAKE} -DENABLE_TESTS=OFF"
     export CMAKE="${CMAKE} -GNinja -DCMAKE_MAKE_PROGRAM=$NINJA"
+    export CMAKE="${CMAKE} -DCMAKE_OSX_ARCHITECTURES=$ARCH"
     # MACOSX_DEPLOYMENT_TARGET in environment should set minimum version
 
     ###################

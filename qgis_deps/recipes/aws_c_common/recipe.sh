@@ -49,18 +49,15 @@ function build_aws_c_common() {
 
     try ${CMAKE} \
         -DENABLE_TESTING=OFF \
+        -DBUILD_SHARED_LIBS=ON \
         $BUILD_aws_c_common
     check_file_configuration CMakeCache.txt
 
     try $NINJA
     try $NINJA install
 
-    # # fixes all libraries install name
-    # for i in `ls ${STAGE_PATH}/lib/libaws*.dylib`;
-    # do
-    #     fix_install_name lib/`basename $i`
-    # done
-
+    fix_install_name lib/$LINK_aws_c_common
+    fix_install_name lib/libaws-c-common.1.dylib
     pop_env
 }
 
