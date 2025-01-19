@@ -39,9 +39,6 @@ function prebuild_aws_sdk_cpp() {
         return
     fi
 
-    # # need to clone recursively
-    # git clone --recursive https://github.com/aws/aws-sdk-cpp.git -b ${VERSION_aws_sdk_cpp} --depth 1
-
     touch .patched
 }
 
@@ -65,12 +62,6 @@ function build_aws_sdk_cpp() {
 
     try $NINJA
     try $NINJA install
-
-    # # fixes all libraries install name
-    # for i in `ls ${STAGE_PATH}/lib/libaws*.dylib`;
-    # do
-    #     fix_install_name lib/`basename $i`
-    # done
 
     pop_env
 }

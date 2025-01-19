@@ -58,12 +58,6 @@ function build_aws_c_io() {
     try $NINJA
     try $NINJA install
 
-    # # fixes all libraries install name
-    # for i in `ls ${STAGE_PATH}/lib/libaws*.dylib`;
-    # do
-    #     fix_install_name lib/`basename $i`
-    # done
-
     pop_env
 }
 
