@@ -5,7 +5,7 @@ DESC_libunistring="C string library for manipulating Unicode strings"
 # version of your package
 VERSION_libunistring=1.3
 
-LINK_libunistring=libunistring.2.dylib
+LINK_libunistring=libunistring.5.dylib
 
 # dependencies of this recipe
 DEPS_libunistring=()
