@@ -7,11 +7,17 @@ VERSION_gcc_major=14
 VERSION_gcc=${VERSION_gcc_major}.2.0
 
 LINK_libgfortran=libgfortran.5.dylib
-LINK_gcc_s=libgcc_s.1.dylib
+LINK_gcc_s=libgcc_s.1.1.dylib
 LINK_libquadmath=libquadmath.0.dylib
 
 # dependencies of this recipe
-DEPS_gcc=(zlib gmp mpfr libmpc)
+DEPS_gcc=(
+    gmp
+    isl
+    libmpc
+    mpfr
+    zstd
+)
 
 # url of the package
 URL_gcc=https://ftp.gnu.org/gnu/gcc/gcc-${VERSION_gcc}/gcc-${VERSION_gcc}.tar.xz
@@ -64,7 +70,9 @@ function build_gcc() {
         --with-sysroot=`xcrun --show-sdk-path` \
         --with-gmp=$STAGE_PATH \
         --with-mpfr=$STAGE_PATH \
-        --with-mpc=$STAGE_PATH
+        --with-mpc=$STAGE_PATH \
+        --with-isl=$STAGE_PATH \
+        --with-zstd=$STAGE_PATH
 
     check_file_configuration config.status
 

@@ -70,7 +70,6 @@ function build_protobuf() {
 
 # function called after all the compile have been done
 function postbuild_protobuf() {
-    verify_binary lib/libprotobuf.dylib
     verify_binary lib/$LINK_protobuf_lite
     verify_binary lib/$LINK_protobuf
     verify_binary lib/libprotoc.dylib
