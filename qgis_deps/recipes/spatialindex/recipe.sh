@@ -61,8 +61,20 @@ function build_spatialindex() {
     try $NINJA install
 
     try install_name_tool -id ${STAGE_PATH}/lib/$LINK_spatialindex ${STAGE_PATH}/lib/$LINK_spatialindex
-    try install_name_tool -delete_rpath $BUILD_PATH/spatialindex/build-$ARCH/bin ${STAGE_PATH}/lib/$LINK_spatialindex_c
+    try install_name_tool -id ${STAGE_PATH}/lib/$LINK_spatialindex_c ${STAGE_PATH}/lib/$LINK_spatialindex
+    try install_name_tool -change @rpath/$LINK_spatialindex ${STAGE_PATH}/lib/$LINK_spatialindex ${STAGE_PATH}/lib/$LINK_spatialindex
+    try install_name_tool -change @rpath/$LINK_spatialindex_c ${STAGE_PATH}/lib/$LINK_spatialindex_c ${STAGE_PATH}/lib/$LINK_spatialindex
+    try install_name_tool -id ${STAGE_PATH}/lib/$LINK_spatialindex_c ${STAGE_PATH}/lib/$LINK_spatialindex_c
+    try install_name_tool -id ${STAGE_PATH}/lib/$LINK_spatialindex ${STAGE_PATH}/lib/$LINK_spatialindex_c
     try install_name_tool -change @rpath/$LINK_spatialindex ${STAGE_PATH}/lib/$LINK_spatialindex ${STAGE_PATH}/lib/$LINK_spatialindex_c
+    try install_name_tool -change @rpath/$LINK_spatialindex_c ${STAGE_PATH}/lib/$LINK_spatialindex_c ${STAGE_PATH}/lib/$LINK_spatialindex_c
+    # Check if RPATH exists before attempting to delete it
+    if otool -l ${STAGE_PATH}/lib/$LINK_spatialindex_c | grep -q "$BUILD_PATH/spatialindex/build-$ARCH/bin"; then
+        try install_name_tool -delete_rpath $BUILD_PATH/spatialindex/build-$ARCH/bin ${STAGE_PATH}/lib/$LINK_spatialindex_c
+    fi
+    try install_name_tool -change /opt/QGIS/qgis-deps-0.10.0/build/spatialindex/build-arm64/src/$LINK_spatialindex \
+        @rpath/$LINK_spatialindex \
+        ${STAGE_PATH}/lib/$LINK_spatialindex_c
 
     pop_env
 }
