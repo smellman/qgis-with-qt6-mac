@@ -23,8 +23,8 @@ DEPS_python_all=(
     python_numpy
     python_owslib
     python_pyqt6
-    python_qscintilla
     python_sip
+    python_qscintilla
     python_pillow
     python_scipy
     python_shapely

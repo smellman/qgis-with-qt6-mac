@@ -114,6 +114,7 @@ REQUIREMENTS_python_packages=(
     snuggs==1.4.7
     affine==2.4.0
     matplotlib==3.10.0
+    lit==18.1.8
 )
 
 # pyodbc build may fail

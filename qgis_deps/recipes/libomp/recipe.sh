@@ -8,7 +8,7 @@ VERSION_libomp=19.1.6
 LINK_libomp=libomp.dylib
 
 # dependencies of this recipe
-DEPS_libomp=()
+DEPS_libomp=(python python_packages)
 
 # url of the package
 URL_libomp=https://github.com/llvm/llvm-project/releases/download/llvmorg-$VERSION_libomp/openmp-$VERSION_libomp.src.tar.xz
@@ -43,20 +43,20 @@ function shouldbuild_libomp() {
 
 # function called to build the source code
 function build_libomp() {
-    try mkdir -p $BUILD_PATH/libomp/build-$ARCH
+    try rsync -a $BUILD_libomp/ $BUILD_PATH/libomp/build-$ARCH/
     try cd $BUILD_PATH/libomp/build-$ARCH
 
     push_env
 
     try $CMAKE \
         -DLIBOMP_INSTALL_ALIASES=OFF \
-        $BUILD_libomp .
-    check_file_configuration CMakeCache.txt
+        -B build/shared
+    # check_file_configuration CMakeCache.txt
 
-    try $NINJA
-    try $NINJA install
+    try cmake --build build/shared
+    try cmake --install build/shared
 
-    try install_name_tool -id ${STAGE_PATH}/lib/${LINK_libomp} ${STAGE_PATH}/lib/${LINK_libomp}
+    # try install_name_tool -id ${STAGE_PATH}/lib/${LINK_libomp} ${STAGE_PATH}/lib/${LINK_libomp}
 
     pop_env
 }
