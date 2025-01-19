@@ -52,7 +52,7 @@ function build_brotli() {
     push_env
 
     try $CMAKE \
-        $BUILD_brotli .
+        $BUILD_brotli
 
     check_file_configuration CMakeCache.txt
 
