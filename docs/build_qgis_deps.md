@@ -1,5 +1,14 @@
 # Build and install QGIS dependencies
 
+## Prerequisites
+
+```bash
+brew install wget
+brew install ninja
+brew install meson
+brew install llvm@18
+```
+
 ## How to build QGIS dependencies
 
 ```bash

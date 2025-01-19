@@ -10,6 +10,7 @@ LINK_libmysqlclient=libmysqlclient.24.dylib
 DEPS_mysql=(
     openssl
     protobuf
+    rapidjson
     zstd
     zlib
 )
@@ -55,7 +56,7 @@ function build_mysql() {
 
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     # -DDOWNLOAD_BOOST=OFF may be not needed
-    BOOST_ROOT=$STAGE_PATH try ${CMAKE}  \
+    try ${CMAKE}  \
         -DWITHOUT_SERVER=ON \
         -DFORCE_INSOURCE_BUILD=1 \
         -DENABLED_PROFILING=OFF \
@@ -72,15 +73,26 @@ function build_mysql() {
         -DMYSQL_DATADIR=$STAGE_PATH/share/data \
         -DWITH_AUTHENTICATION_CLIENT_PLUGINS=yes \
         -DWITH_BOOST=boost \
-        -DWITH_ZSTD=system \
+        -DWITH_ZSTD=bundled \
         -DWITH_SYSTEM_LIBS_DEFAULT=TRUE \
         -DCMAKE_FIND_FRAMEWORK=LAST \
         -DWITH_EDITLINE=system \
         -DWITH_SSL=yes \
-        -DWITH_PROTOBUF=system \
+        -DWITH_PROTOBUF=bundled \
+        -DWITH_SSL=system \
+        -DOPENSSL_ROOT_DIR=$STAGE_PATH \
+        -DOPENSSL_INCLUDE_DIR=$STAGE_PATH/include \
+        -DOPENSSL_SSL_LIBRARY=$STAGE_PATH/lib/libssl.dylib \
+        -DOPENSSL_CRYPTO_LIBRARY=$STAGE_PATH/lib/libcrypto.dylib \
         -DWITH_UNIT_TESTS=OFF \
         -DENABLED_LOCAL_INFILE=1 \
         -DWITH_INNODB_MEMCACHED=ON \
+        -DCMAKE_CXX_FLAGS="-fpermissive" \
+        -DCMAKE_AR=/opt/homebrew/opt/llvm@18/bin/llvm-ar \
+        -DCMAKE_RANLIB=/opt/homebrew/opt/llvm@18/bin/llvm-ranlib \
+        -DCMAKE_NM=/opt/homebrew/opt/llvm@18/bin/llvm-nm \
+        -DCMAKE_C_COMPILER=/opt/homebrew/opt/llvm@18/bin/clang \
+        -DCMAKE_CXX_COMPILER=/opt/homebrew/opt/llvm@18/bin/clang++ \
         $BUILD_mysql
 
     check_file_configuration CMakeCache.txt

@@ -26,6 +26,7 @@ So, I try to build QGIS with Qt6 on macOS.
 - Ninja
 - wget
 - Meson
+- llvm@18
 
 ## Original repository
 
