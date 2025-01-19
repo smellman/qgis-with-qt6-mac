@@ -49,7 +49,7 @@ function build_aws_c_common() {
 
     try ${CMAKE} \
         -DENABLE_TESTING=OFF \
-        $BUILD_aws_c_common/aws-c-common
+        $BUILD_aws_c_common
     check_file_configuration CMakeCache.txt
 
     try $NINJA
