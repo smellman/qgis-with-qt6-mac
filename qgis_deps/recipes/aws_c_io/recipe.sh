@@ -16,7 +16,7 @@ DEPS_aws_c_io=(
 URL_aws_c_io=https://github.com/awslabs/aws-c-io/archive/refs/tags/v${VERSION_aws_c_io}.tar.gz
 
 # md5 of the package
-MD5_aws_c_io=5aadae8619a5b09739b99d886075879d
+MD5_aws_c_io=b3df9ea54018e71934775931fdf6efe2
 
 # default build path
 BUILD_aws_c_io=$BUILD_PATH/aws_c_io/$(get_directory $URL_aws_c_io)
