@@ -10,7 +10,7 @@ VERSION_openssl=3.4.0
 # dependencies of this recipe
 DEPS_openssl=()
 
-LINK_libssl_version=3.4
+LINK_libssl_version=3
 LINK_libssl=libssl.${LINK_libssl_version}.dylib
 LINK_libcrypto=libcrypto.${LINK_libssl_version}.dylib
 
