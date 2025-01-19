@@ -7,7 +7,7 @@ VERSION_exiv2=0.28.3
 LINK_exiv2=libexiv2.28.dylib
 
 # dependencies of this recipe
-DEPS_exiv2=()
+DEPS_exiv2=(brotli inih libssh2 gettext)
 
 # url of the package
 URL_exiv2=https://github.com/Exiv2/exiv2/archive/refs/tags/v${VERSION_exiv2}.tar.gz
