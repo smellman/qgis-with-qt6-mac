@@ -56,11 +56,16 @@ function build_aws_c_s3() {
 
     try ${CMAKE} \
         -DENABLE_TESTING=OFF \
-        $BUILD_aws_c_s3/aws-c-s3
+        -DBUILD_SHARED_LIBS=ON \
+        $BUILD_aws_c_s3
     check_file_configuration CMakeCache.txt
 
     try $NINJA
     try $NINJA install
+
+    try install_name_tool -id ${STAGE_PATH}/lib/$LINK_aws_c_s3 $STAGE_PATH/lib/$LINK_aws_c_s3
+
+    pop_env
 }
 
 # function called after all the compile have been done

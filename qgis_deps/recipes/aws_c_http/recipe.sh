@@ -54,17 +54,14 @@ function build_aws_c_http() {
 
     try ${CMAKE} \
         -DENABLE_TESTING=OFF \
-        $BUILD_aws_c_http/aws-c-common
+        -DBUILD_SHARED_LIBS=ON \
+        $BUILD_aws_c_http
     check_file_configuration CMakeCache.txt
 
     try $NINJA
     try $NINJA install
 
-    # # fixes all libraries install name
-    # for i in `ls ${STAGE_PATH}/lib/libaws*.dylib`;
-    # do
-    #     fix_install_name lib/`basename $i`
-    # done
+    try install_name_tool -id ${STAGE_PATH}/lib/$LINK_aws_c_http $STAGE_PATH/lib/$LINK_aws_c_http
 
     pop_env
 }

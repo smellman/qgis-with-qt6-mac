@@ -49,17 +49,14 @@ function build_aws_c_compression() {
 
     try ${CMAKE} \
         -DENABLE_TESTING=OFF \
-        $BUILD_aws_c_compression/aws-c-compression
+        -DBUILD_SHARED_LIBS=ON \
+        $BUILD_aws_c_compression
     check_file_configuration CMakeCache.txt
 
     try $NINJA
     try $NINJA install
 
-    # # fixes all libraries install name
-    # for i in `ls ${STAGE_PATH}/lib/libaws*.dylib`;
-    # do
-    #     fix_install_name lib/`basename $i`
-    # done
+    try install_name_tool -id ${STAGE_PATH}/lib/$LINK_aws_c_compression $STAGE_PATH/lib/$LINK_aws_c_compression
 
     pop_env
 }

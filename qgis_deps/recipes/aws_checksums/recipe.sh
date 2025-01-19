@@ -49,12 +49,15 @@ function build_aws_checksums() {
 
     try ${CMAKE} \
         -DENABLE_TESTING=OFF \
-        $BUILD_aws_checksums/aws-checksums
+        -DBUILD_SHARED_LIBS=ON \
+        $BUILD_aws_checksums
     check_file_configuration CMakeCache.txt
 
     try $NINJA
     try $NINJA install
-    
+
+    try install_name_tool -id ${STAGE_PATH}/lib/$LINK_aws_checksums $STAGE_PATH/lib/$LINK_aws_checksums
+
     pop_env
 }
 

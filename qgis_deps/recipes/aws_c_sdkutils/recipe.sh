@@ -49,11 +49,14 @@ function build_aws_c_sdkutils() {
 
     try ${CMAKE} \
         -DENABLE_TESTING=OFF \
-        $BUILD_aws_c_sdkutils/aws-c-sdkutils
+        -DBUILD_SHARED_LIBS=ON \
+        $BUILD_aws_c_sdkutils
     check_file_configuration CMakeCache.txt
 
     try $NINJA
     try $NINJA install
+
+    try install_name_tool -id ${STAGE_PATH}/lib/$LINK_aws_c_sdkutils $STAGE_PATH/lib/$LINK_aws_c_sdkutils
 
     pop_env
 }

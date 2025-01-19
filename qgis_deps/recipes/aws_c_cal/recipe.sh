@@ -51,11 +51,16 @@ function build_aws_c_cal() {
 
     try ${CMAKE} \
         -DENABLE_TESTING=OFF \
-        $BUILD_aws_c_cal/aws-c-cal
+        -DBUILD_SHARED_LIBS=ON \
+        $BUILD_aws_c_cal
     check_file_configuration CMakeCache.txt
 
     try $NINJA
     try $NINJA install
+
+    try install_name_tool -id ${STAGE_PATH}/lib/$LINK_aws_c_cal $STAGE_PATH/lib/$LINK_aws_c_cal
+
+    pop_env
 }
 
 # function called after all the compile have been done
