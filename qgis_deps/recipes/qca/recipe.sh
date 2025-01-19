@@ -50,8 +50,7 @@ function build_qca() {
 
     try ${CMAKE} \
         -DQCA_PLUGINS_INSTALL_DIR=$STAGE_PATH/qt6/plugins \
-        -DQT5_BUILD=OFF \
-        -DQT4_BUILD=OFF \
+        -DBUILD_WITH_QT6=ON \
         -DBUILD_TESTS=OFF \
         -DWITH_botan_PLUGIN=NO \
         -DWITH_gcrypt_PLUGIN=NO \
