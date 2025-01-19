@@ -3,8 +3,8 @@
 DESC_aws_c_event_stream="C99 implementation of the vnd.amazon.eventstream content-type"
 
 # version of your package
-VERSION_aws_c_event_stream=0.15.3
-LINK_aws_c_event_stream=libaws-c-io.dylib
+VERSION_aws_c_event_stream=0.5.0
+LINK_aws_c_event_stream=libaws-c-event-stream.dylib
 
 # dependencies of this recipe
 DEPS_aws_c_event_stream=(
