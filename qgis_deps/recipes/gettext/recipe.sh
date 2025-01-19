@@ -49,13 +49,27 @@ function build_gettext() {
     try cd $BUILD_PATH/gettext/build-$ARCH
     push_env
 
+    # https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/g/gettext.rb#L29
+    export am_cv_func_iconv_works=yes
+
     try ${CONFIGURE} \
         --disable-debug \
-        --program-prefix=g
+        --program-prefix=g \
+        --with-libunistring-prefix=${STAGE_PATH} \
+        --disable-silent-rules \
+        --with-included-glib \
+        --with-included-libcroco \
+        --with-emacs \
+        --disable-java \
+        --disable-csharp \
+        --without-git \
+        --without-cvs \
+        --without-xz \
+        --with-included-gettext
 
     check_file_configuration config.status
-    try $MAKESMP
-    try $MAKESMP install
+    try make
+    try make install # Don't use smp here
 
     pop_env
 }
